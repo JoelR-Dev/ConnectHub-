@@ -4,6 +4,10 @@
 
 ConnectHub es una red social temática donde los usuarios pueden registrarse, iniciar sesión, crear publicaciones con texto e imagen, reaccionar, comentar, seguir a otros usuarios y explorar contenido mediante búsqueda.
 
+## diseño
+https://www.figma.com/make/c1XZ3UvtUFiZsRIYiauumX/User-Greeting?node-id=0-1&t=2PMgSVQAnKXWCiVA-1
+
+
 ## Tecnologías Utilizadas
 
 - Frontend: HTML, CSS, JavaScript
