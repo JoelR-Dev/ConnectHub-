@@ -2,6 +2,10 @@ import express from "express";
 import cors from "cors";
 import pool from "./db/db.js";
 import dotenv from "dotenv";
+import authRoutes from "./routes/auth.js";
+
+
+
 
 dotenv.config();
 
@@ -19,8 +23,11 @@ app.get("/health", async(req, res)=>{
     }
 })
 
+app.use("/api", authRoutes);
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, ()=>{
     console.log(`server is runnig on http://localhost:${PORT}`)
 })
+
