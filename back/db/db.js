@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+//Conexion con la base de datos
+=======
 import mysql from "mysql2/promise";
 import dotenv from "dotenv";
 
@@ -12,3 +15,4 @@ const pool = mysql.createPool({
 })
 
 export default pool;
+>>>>>>> 48166c711180f6d163814c269055d1f2ce4bc2cd
