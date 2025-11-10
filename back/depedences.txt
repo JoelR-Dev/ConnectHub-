@@ -1,0 +1,18 @@
+Accion requerida
+
+Inicializar el projecto Node
+    $ npm init -y
+
+Instalar Dependencias
+
+    -express: Framework para crear servidores y rutas en Node.js de forma sencilla.
+    -mysql2: Driver para conectarte a MySQL desde Node.js.
+    -dotenv: Permite usar variables de entorno desde un archivo .env
+    -cors: Middleware para habilitar CORS (Cross-Origin Resource Sharing).
+    -bcrypt: Librería para encriptar contraseñas.
+    -jsonwebtoken: Sirve para la autenticación mediante tokens JWT
+
+Dependencia para desarrollo Nodemon
+    $ npm install -D nodemon
+
+Instalacion: $ npm install express mysql2 dotenv cors bcrypt jsonwebtoken
