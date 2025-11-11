@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ConnectHub — Bienvenido</title>
+  <link rel="stylesheet" href="../src//styles/loginRegister.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="left-section">
+      <h1 class="title">BIENVENIDO</h1>
+      <img src="Captura de pantalla 2025-10-29 221622.png" alt="Logo" class="logo">
+      <h2 class="brand">ConnectHub</h2>
+      <p class="description">Conecta tu equipo y gestiona tus proyectos de manera profesional</p>
+    </div>
+
+    <div class="right-section">
+      <div class="form-card">
+        <h2>Bienvenido</h2>
+        <p>Inicia sesión o crea una cuenta nueva</p>
+
+        <div class="tab-buttons">
+          <button class="tab active" id="login-tab">Iniciar Sesión</button>
+          <button class="tab" id="register-tab">Registrarse</button>
+        </div>
+
+        <form id="login-form" class="form active">
+          <label>Email</label>
+          <input type="email" placeholder="tu@email.com" required />
+
+          <label>Contraseña</label>
+          <div class="password-field">
+            <input type="password" placeholder="••••••••" id="login-pass" required />
+            <span class="toggle-pass" onclick="togglePassword('login-pass', this)">👁️</span>
+          </div>
+
+          <button type="submit" class="btn primary">Iniciar Sesión</button>
+        </form>
+
+        <form id="register-form" class="form">
+          <label>Nombre de Usuario</label>
+          <input type="text" placeholder="usuario123" required />
+
+          <label>Email</label>
+          <input type="email" placeholder="tu@email.com" required />
+
+          <label>Rol</label>
+          <select required>
+            <option value="">Selecciona un rol</option>
+            <option>Administrador</option>
+            <option>Miembro</option>
+            <option>Invitado</option>
+          </select>
+
+          <label>Contraseña</label>
+          <div class="password-field">
+            <input type="password" placeholder="••••••••" id="register-pass" required />
+            <span class="toggle-pass" onclick="togglePassword('register-pass', this)">👁️</span>
+          </div>
+
+          <button type="submit" class="btn primary">Registrarse</button>
+        </form>
+      </div>
+
+      <footer>© 2025 ConnectHub. Todos los derechos reservados.</footer>
+    </div>
+  </div>
+
+  <script src="../src/api/loginRegister.js"></script>
+</body>
+</html>
