@@ -63,6 +63,37 @@ connecthub/
 - **POST /posts** — Crear publicación
 - **POST /reactions/:postId** — Dar/Quitar like
 
+
+- ### 🧩 Registro de usuarios
+
+Para registrar un nuevo usuario en la API, realiza una petición **POST** al siguiente endpoint:
+
+http://localhost:3000/api/register
+
+curl -X POST http://localhost:3000/api/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "JoelR20",
+    "email": "rere@waeawe",
+    "phone": 2123,
+    "address": "nose nose",
+    "role": "invercionista",
+    "password": "Joel123"
+  }'
+
+  - Respuesta Exitosa ✅
+    `{
+      "message": "User registered successfully"
+    }`
+    
+  - Respuesta de error 🟥
+    `{
+  "error": "Email already registered"
+    }
+`
+
+
+
 ## 🚀 Despliegue
 
 El proyecto se desplegará usando Render / Railway / Heroku.
