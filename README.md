@@ -68,9 +68,10 @@ connecthub/
 
 Para registrar un nuevo usuario en la API, realiza una petición **POST** al siguiente endpoint:
 
-http://localhost:3000/api/register
+`http://localhost:3000/api/register`
 
-curl -X POST http://localhost:3000/api/register \
+```
+  curl -X POST http://localhost:3000/api/register \
   -H "Content-Type: application/json" \
   -d '{
     "username": "JoelR20",
@@ -80,6 +81,7 @@ curl -X POST http://localhost:3000/api/register \
     "role": "invercionista",
     "password": "Joel123"
   }'
+```
 
   - Respuesta Exitosa ✅
     `{
