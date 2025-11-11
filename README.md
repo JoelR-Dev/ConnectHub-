@@ -57,8 +57,8 @@ connecthub/
 
 ## 📡 Endpoints Principales
 
-- **POST /auth/register** — Registrar usuario
-- **POST /auth/login** — Iniciar sesión
+- **POST /api/register** — Registrar usuario
+- **POST /api/login** — Iniciar sesión
 - **GET /posts** — Ver publicaciones del feed
 - **POST /posts** — Crear publicación
 - **POST /reactions/:postId** — Dar/Quitar like
@@ -70,10 +70,9 @@ Para registrar un nuevo usuario en la API, realiza una petición **POST** al sig
 
 `http://localhost:3000/api/register`
 
-```
-  curl -X POST http://localhost:3000/api/register \
-  -H "Content-Type: application/json" \
-  -d '{
+```Postman
+
+'{
     "username": "JoelR20",
     "email": "rere@waeawe",
     "phone": 2123,
@@ -90,7 +89,7 @@ Para registrar un nuevo usuario en la API, realiza una petición **POST** al sig
     
   - Respuesta de error 🟥
     `{
-  "error": "Email already registered"
+  "error": "💥 Error al registrar usuario:"
     }
 `
 
