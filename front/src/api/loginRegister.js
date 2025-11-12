@@ -23,4 +23,32 @@ function togglePassword(id, el) {
   el.textContent = input.type === "password" ? "👁️" : "🙈";
 }
 
+document.getElementById("btnRegister").addEventListener("click", async (e) =>{
+  e.preventDefault()
+  const data = {
+  username: document.getElementById("username").value,
+  email: document.getElementById("email").value,
+  address: "", 
+  role: document.getElementById("role").value,
+  password: document.getElementById("password").value
+};
+
+console.log(data)
+  const res = await fetch("http://localhost:3000/api/register",{
+    method:"POST",
+    headers:{"Content-Type": "application/json"},
+    body: JSON.stringify(data)  });
+
+    const result =await res.json();
+
+console.log(result.message || result.error);
+if(!result.error){
+ alert("registrado exitosamente")
+ window.location.reload()
+}
+
+
+})
+
+//username,email,phone,addres,role,ava
 

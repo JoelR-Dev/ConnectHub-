@@ -41,13 +41,13 @@
 
         <form id="register-form" class="form">
           <label>Nombre de Usuario</label>
-          <input type="text" placeholder="usuario123" required />
+          <input id="username" type="text" placeholder="usuario123" required />
 
           <label>Email</label>
-          <input type="email" placeholder="tu@email.com" required />
+          <input id="email" type="email" placeholder="tu@email.com" required />
 
           <label>Rol</label>
-          <select required>
+          <select id="role" required>
             <option value="">Selecciona un rol</option>
             <option>Administrador</option>
             <option>Miembro</option>
@@ -56,11 +56,11 @@
 
           <label>Contraseña</label>
           <div class="password-field">
-            <input type="password" placeholder="••••••••" id="register-pass" required />
+            <input id="password" type="password" placeholder="••••••••"  required />
             <span class="toggle-pass" onclick="togglePassword('register-pass', this)">👁️</span>
           </div>
 
-          <button type="submit" class="btn primary">Registrarse</button>
+          <button id="btnRegister"  class="btn primary">Registrarse</button>
         </form>
       </div>
 
