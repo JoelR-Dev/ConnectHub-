@@ -1,10 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>front</title>
-  </head>
-  <body></body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConnectHub - Home</title>
+    <link rel="stylesheet" href="./src/styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Background -->
+    <div class="bg-overlay"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-area">
+            <img src="logo.png" alt="Logo" class="logo">
+            <h1 class="title">ConnectHub</h1>
+        </div>
+
+        <nav class="nav-links">
+            <a href="#">Dashboard</a>
+            <a href="#">Proyectos</a>
+            <a href="#">Equipo</a>
+            <a href="#">Calendario</a>
+            <a href="#">Ajustes</a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="icon-btn">🔔</button>
+            <img src="user.jpg" class="profile">
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Hero Section change for each user (back end task) / for hero - buttons make a funtionality to them -->
+        <section class="hero">
+            <h2>Bienvenido, Moisés 👋</h2> 
+            <p class="subtitle">Gestiona tu equipo y tus proyectos de manera profesional</p>
+
+            <div class="hero-buttons"> 
+                <button class="btn-primary">Crear nuevo proyecto</button>
+                <button class="btn-secondary">Ver proyectos</button>
+            </div>
+        </section>
+
+        <!-- Summary Cards -->
+        <section class="cards">
+            <div class="card">
+                <h3>12</h3>
+                <p>Proyectos Activos</p>
+            </div>
+            <div class="card">
+                <h3>8</h3>
+                <p>Miembros del Equipo</p>
+            </div>
+            <div class="card">
+                <h3>5</h3>
+                <p>Tareas Pendientes</p>
+            </div>
+            <div class="card">
+                <h3>3</h3>
+                <p>Notificaciones</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
 </html>
