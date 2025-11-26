@@ -52,3 +52,58 @@ if(!result.error){
 
 //username,email,phone,addres,role,ava
 
+
+function clearSession() {
+  localStorage.removeItem("user");
+  localStorage.removeItem("logged");
+  
+}
+
+async function login(){
+  let email = document.getElementById("login-email").value;
+  let password = document.getElementById("login-pass").value;
+
+  if (!email || !password){
+    alert ("por favor, completa todos los campos");
+    return;
+  }
+
+
+
+try{
+  const response = await fetch("http://localhost:3000/api/login",{
+    method:"POST",
+    headers:{
+      "Content-Type": "Application/json"
+    },
+
+    body: JSON.stringify({email,password})
+  })
+
+  const data = await response.json()
+
+  if (!response.ok){
+    alert(data.massage || "Creadenciales invalidas")
+    return
+  }
+  localStorage.setItem("logged", "true")
+  localStorage.setItem("user", JSON.stringify(data.user || {}))
+
+  window.location.href = "./pages/loginRegister.html"
+}
+
+catch(error){
+  console.error('error en el login',error);
+  alert('error al iniciar sesion')
+}
+
+
+
+}
+
+function protetRoute(){
+  if (localStorage.getItem('logged') !== 'true'){
+    window.location.href = './loginRegister.html';
+  }
+}
+

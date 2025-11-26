@@ -3,71 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ConnectHub - Home</title>
-    <link rel="stylesheet" href="./src/styles/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Home Page Mejorada - Tech Solutions</title>
+    <!-- Enlaza el archivo CSS externo -->
+    <link rel="stylesheet" href="./src/styles/style.css">
 </head>
 <body>
 
-    <!-- Background -->
-    <div class="bg-overlay"></div>
-
-    <!-- Header -->
-    <header class="header">
-        <div class="logo-area">
-            <img src="logo.png" alt="Logo" class="logo">
-            <h1 class="title">ConnectHub</h1>
-        </div>
-
-        <nav class="nav-links">
-            <a href="#">Dashboard</a>
-            <a href="#">Proyectos</a>
-            <a href="#">Equipo</a>
-            <a href="#">Calendario</a>
-            <a href="#">Ajustes</a>
-        </nav>
-
-        <div class="header-actions">
-            <button class="icon-btn">🔔</button>
-            <img src="user.jpg" class="profile">
+    <header>
+        <div class="container">
+            <div class="logo">Mi Sitio Web</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Servicios</a></li>
+                    <li><a href="#about">Acerca de</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="container">
-
-        <!-- Hero Section change for each user (back end task) / for hero - buttons make a funtionality to them -->
+    <main>
+        <!-- Sección Principal/Hero -->
         <section class="hero">
-            <h2>Bienvenido, Moisés 👋</h2> 
-            <p class="subtitle">Gestiona tu equipo y tus proyectos de manera profesional</p>
-
-            <div class="hero-buttons"> 
-                <button class="btn-primary">Crear nuevo proyecto</button>
-                <button class="btn-secondary">Ver proyectos</button>
+            <div class="container">
+                <h1>Soluciones Innovadoras al Alcance de tu Mano</h1>
+                <p>Usamos la última tecnología de IA para optimizar tus resultados y potenciar tu negocio.</p>
+                <a href="#contact" class="btn-primary">Empieza Ahora</a>
             </div>
         </section>
 
-        <!-- Summary Cards -->
-        <section class="cards">
-            <div class="card">
-                <h3>12</h3>
-                <p>Proyectos Activos</p>
-            </div>
-            <div class="card">
-                <h3>8</h3>
-                <p>Miembros del Equipo</p>
-            </div>
-            <div class="card">
-                <h3>5</h3>
-                <p>Tareas Pendientes</p>
-            </div>
-            <div class="card">
-                <h3>3</h3>
-                <p>Notificaciones</p>
+        <!-- Sección de Características -->
+        <section id="features" class="container">
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Análisis IA</h3>
+                    <p>Procesamos tus datos con algoritmos avanzados para encontrar patrones ocultos.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Desarrollo Web</h3>
+                    <p>Creamos sitios rápidos, modernos y optimizados para cualquier dispositivo móvil.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Soporte 24/7</h3>
+                    <p>Nuestro equipo está siempre disponible para resolver tus dudas y problemas técnicos.</p>
+                </div>
             </div>
         </section>
     </main>
 
-    <script src="app.js"></script>
+    <footer>
+        <p>Mi Sitio Web &copy; 2025. Todos los derechos reservados.</p>
+    </footer>
+
 </body>
 </html>
