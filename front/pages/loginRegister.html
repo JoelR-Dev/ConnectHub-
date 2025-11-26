@@ -28,7 +28,7 @@
 
         <form id="login-form" class="form active">
           <label>Email</label>
-          <input type="email" placeholder="tu@email.com" required />
+          <input type="email" placeholder="tu@email.com" id="login-email" required />
 
           <label>Contraseña</label>
           <div class="password-field">
@@ -36,7 +36,7 @@
             <span class="toggle-pass" onclick="togglePassword('login-pass', this)">👁️</span>
           </div>
 
-          <button type="submit" class="btn primary">Iniciar Sesión</button>
+          <button type="button" onclick="login()" class="btn primary">Iniciar Sesión</button>
         </form>
 
         <form id="register-form" class="form">
