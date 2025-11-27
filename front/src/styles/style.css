@@ -9,10 +9,10 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-
+    height: 200vh;
     /* --- PROPIEDADES DE IMAGEN DE FONDO AÑADIDAS --- */
     /* MODIFICA la URL('...') con la ruta de tu imagen */
-    background-image: url("./finca.jpg"); 
+    background-image: url("./connect.jpg"); 
     background-size: cover;          /* Escala la imagen para cubrir todo el fondo */
     background-repeat: no-repeat;    /* Evita la repetición de la imagen */
     background-attachment: fixed;    /* Mantiene la imagen fija mientras el contenido se desplaza */
@@ -32,11 +32,11 @@ body {
 
 /* Barra de Navegación */
 header {
-    background: #0056b3; /* Azul oscuro */
+    background: #444444; /* Azul oscuro */
     color: #ffffff;
     padding-top: 15px;
     min-height: 70px;
-    border-bottom: #004085 3px solid;
+    border-bottom: #444444 3px solid;
     position: sticky;
     top: 0;
 }
@@ -91,7 +91,7 @@ header .logo {
 }
 
 .btn-primary {
-    background: #ff5722; /* Naranja acentuado */
+    background: #001aff; /* Naranja acentuado */
     color: #ffffff;
     padding: 12px 25px;
     text-decoration: none;
@@ -114,12 +114,14 @@ header .logo {
 
 .feature-card {
     /* Fondo blanco semitransparente para ver la imagen de fondo */
-    background: rgba(255, 255, 255, 0.8); 
+    background:  rgba(109, 108, 108, 0.315); 
+    backdrop-filter: blur(15px);
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     text-align: center;
     flex: 1; 
+    color: white;
     transition: transform 0.3s ease;
 }
 
@@ -139,4 +141,54 @@ footer {
     text-align: center;
     padding: 20px 0;
     margin-top: 40px;
+}
+
+
+.vision{
+       background:  rgba(109, 108, 108, 0.315); 
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    text-align: center;
+    flex: 1; 
+    color: white;
+    width: 800px;
+    transition: transform 0.3s ease;
+    margin: 30px;
+
+}
+
+main{
+    padding: top 30px; ;
+    display: flex;
+    flex-direction: column;
+      align-items: center;
+    justify-content: center;
+}
+
+#funcionalidades-clave {
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    color: blue;
+    background-color: #3333338f;
+    gap: 20px;
+    margin: 20px;
+        backdrop-filter: blur(15px);
+}
+
+.contenedor-funcionalidad {
+    background-color: #ffffff6c;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 5px solid #007bff; /* Color distintivo */
+    border-radius: 4px;
+    color: black;
+    backdrop-filter: blur(15px);
+}
+
+.contenedor-funcionalidad h3 {
+    color: #333;
+    margin-top: 0;
 }
