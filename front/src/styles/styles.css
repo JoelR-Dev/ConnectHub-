@@ -1,185 +1,290 @@
-:root{
+:root {
     --primary: #00a2ff;
     --muted: #cbd5e1;
+    --text-color: #f0f4f8; /* Blanco suave para el texto */
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --header-bg: rgba(0, 0, 0, 0.25);
+    --link-hover: #4ab3ff;
 }
 
-*{box-sizing: border-box}
-
-/* Background & base */
-body {
+/* Reset y Base */
+* {
+    box-sizing: border-box;
     margin: 0;
-    font-family: 'Inter', Arial, sans-serif;
-    color: white;
-    overflow-x: hidden;
-    /* Use a remote image like loginRegister for consistency */
-    background: url('https://images.unsplash.com/photo-1593642634443-44adaa06623a?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
-    min-height: 100vh;
+    padding: 0;
 }
 
-.bg-overlay {
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    color: var(--text-color);
+    /* Usando una imagen remota similar a la referencia */
+    background: url('https://images.unsplash.com/photo-1593642634443-44adaa06623a?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative; /* Necesario para el overlay fijo */
+}
+
+/* Overlay para contraste (Adaptado del .bg-overlay de tu referencia) */
+body::before {
+    content: '';
     position: fixed;
     top: 0; left: 0;
     width: 100%;
     height: 100%;
-    /* keep overlay so header and content have contrast */
-    background: rgba(0,0,0,0.35);
+    background: rgba(0, 0, 0, 0.5); /* Oscurece el fondo */
     z-index: -1;
 }
 
-/* Header */
-.header {
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.begin {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* --- Header y Navegación --- */
+header {
     position: fixed;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 15px 50px;
+    z-index: 1000;
+    background: var(--header-bg);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.logo-area {
-    display: flex;
-    gap: 10px;
-    align-items: center;
+    padding: 15px 20px;
 }
 
 .logo {
-    width: 40px;
-}
-
-.title {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: bold;
-}
-
-.nav-links {
-    display: flex;
-    gap: 40px;
-}
-
-.nav-links a {
+    color: var(--primary);
     text-decoration: none;
-    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
     font-weight: 500;
-    transition: 0.3s;
+    padding: 5px 0;
+    transition: color 0.3s;
 }
 
-.nav-links a:hover {
-    color: #4ab3ff;
+nav a:hover {
+    color: var(--link-hover);
+    border-bottom: 2px solid var(--link-hover);
 }
 
-.header-actions {
+/* --- Main Content Layout --- */
+main {
+    padding-top: 80px; /* Espacio para el header fixed */
+    padding-bottom: 50px;
     display: flex;
-    gap: 25px;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.icon-btn {
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
+section {
+    padding: 50px 0;
 }
 
-.profile {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: 2px solid rgba(255,255,255,0.6);
+h1, h2, h3 {
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
-/* Main Container */
-.container {
-    padding: 140px 60px 40px;
+h2 {
+    font-size: 36px;
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 40px;
 }
 
-/* Hero Section */
-.hero h2 {
-    font-size: 40px;
-    font-weight: bold;
-}
-
-.subtitle {
-    margin-top: 5px;
-    font-size: 18px;
-    opacity: 0.8;
-}
-
-.hero-buttons {
-    margin-top: 25px;
+/* --- Sección Hero --- */
+.hero {
+    min-height: 70vh;
     display: flex;
-    gap: 20px;
+    align-items: center;
+    text-align: left;
+    padding-top: 50px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    max-width: 700px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    max-width: 600px;
 }
 
 .btn-primary {
-    background: #0094ff;
-    padding: 12px 25px;
+    display: inline-block;
+    background: var(--primary);
+    padding: 12px 30px;
     border: none;
-    border-radius: 12px;
+    border-radius: 8px;
     color: white;
     font-size: 16px;
-    cursor: pointer;
     font-weight: bold;
-    transition: 0.2s;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+    cursor: pointer;
 }
 
 .btn-primary:hover {
     background: #007ae0;
+    transform: translateY(-2px);
 }
 
-.btn-secondary {
-    padding: 12px 25px;
+/* --- Sección de Características (Servicios) --- */
+.features {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 80px;
+}
+
+.feature-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-    background: rgba(255,255,255,0.2);
-    border: 1px solid rgba(255,255,255,0.3);
-    cursor: pointer;
-    color: white;
-}
-
-/* Cards Section */
-.cards {
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-}
-
-.card {
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 20px;
-    padding: 25px;
+    padding: 30px;
     text-align: center;
-    box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.card h3 {
-    font-size: 45px;
-    font-weight: bold;
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-.card p {
-    margin-top: 5px;
+.feature-card h3 {
+    color: var(--primary);
+    font-size: 22px;
+}
+
+.feature-card p {
     opacity: 0.8;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-    .nav-links {
-        display: none;
+/* --- Sección de Visión y Funcionalidades --- */
+section:nth-child(3) {
+    background: rgba(0, 0, 0, 0.4); /* Un poco más oscuro para variar */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+     border-radius: 8px;
+}
+
+/* Contenido de texto general para Visión */
+section p {
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+    text-align: justify;
+    padding: 60px;
+    border-radius: 8px;
+}
+
+/* Sección Funcionalidades Clave */
+#funcionalidades-clave {
+    padding: 50px 20px;
+    max-width: 1200px;
+}
+
+.contenedor-funcionalidad {
+    background: var(--card-bg);
+    backdrop-filter: blur(5px);
+    border-left: 5px solid var(--primary); /* Color distintivo */
+    border-radius: 8px;
+    padding: 3px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.contenedor-funcionalidad h3 {
+    color: var(--primary);
+    margin-top: 0;
+}
+
+.contenedor-funcionalidad p {
+    margin-bottom: 0;
+    text-align: left;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.6);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* --- Media Queries (Responsividad) --- */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 40px;
     }
-    .cards {
-        grid-template-columns: repeat(2, 1fr);
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    nav {
+        width: 100%;
+    }
+    nav ul {
+        justify-content: space-around;
+        gap: 15px;
+    }
+    .features {
+        grid-template-columns: 1fr;
+    }
+    header {
+        position: static;
+    }
+    main {
+        padding-top: 0;
+    }
+    .hero {
+        min-height: auto;
+        padding-top: 30px;
+        padding-bottom: 30px;
     }
 }
 
-@media (max-width: 600px) {
-    .cards {
-        grid-template-columns: repeat(1, 1fr);
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 30px;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
