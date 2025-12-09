@@ -4,6 +4,10 @@ import pool from "./db/db.js";
 import dotenv from "dotenv";
 import authRoutes from "./routes/auth.js";
 import { verifyToken } from "./verifyToken/middlewares.js";
+import postsRoutes from "./routes/posts.js";
+
+
+
 
 dotenv.config();
 
@@ -40,6 +44,9 @@ app.get("/profile", verifyToken, async (req, res) => {
 });
 
 app.use("/api", authRoutes);
+
+app.use("/posts", postsRoutes);
+
 
 const PORT = process.env.PORT || 3000;
 
