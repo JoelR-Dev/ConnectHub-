@@ -3,7 +3,7 @@ import cors from "cors";
 import pool from "./db/db.js";
 import dotenv from "dotenv";
 import authRoutes from "./routes/auth.js";
-import { verifyToken } from "./verifyToken/middlewares.js";
+import { verifyToken } from "./verifyToken/middlewares.js"; 
 import postsRoutes from "./routes/posts.js";
 
 

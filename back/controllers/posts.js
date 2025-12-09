@@ -1,4 +1,6 @@
 import postService from "../services/posts.js";
+import { verifyToken } from "../verifyToken/middlewares.js";
+
 
 export const create = async (req, res) => {
     try {
