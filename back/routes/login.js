@@ -5,7 +5,7 @@ import { verifyToken } from "../verifyToken/middlewares.js";
 const router = express.Router();
 
 router.post("/register", registerUser);
-router.post("/login", loginUser);  // ← ESTA FALTA EN TU PROYECTO
+router.post("/login", loginUser);   // ⬅️ ESTA ES LA NUEVA
 router.get("/profile", verifyToken, profile);
 
 export default router;

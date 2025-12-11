@@ -1,16 +1,18 @@
-import express from "express";
-import { registerUser, profile } from "../controllers/auth.js";
-import { verifyToken } from "../verifyToken/middlewares.js";
-
-
+// back/services/auth.js
+import pool from "../db/db.js";
 
 export const getUserProfile = async (userId) => {
-    
-    const user = await pool.query(
+  try {
+    const [rows] = await pool.query(
       "SELECT id, username, email, phone, address, role FROM users WHERE id = ?",
       [userId]
-    );  
-    return user[0][0];
+    );
+
+    return rows[0] || null;
+  } catch (error) {
+    console.error("Error en getUserProfile:", error);
+    throw error;
+  }
 };
 
 export default getUserProfile;
