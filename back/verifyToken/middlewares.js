@@ -9,7 +9,7 @@ export const verifyToken = (req, res, next) => {
     }
 
     const token = header.split(" ")[1];
-
+    
     if (!token) {
         return res.status(401).json({ message: "Token inválido o ausente" });
     }

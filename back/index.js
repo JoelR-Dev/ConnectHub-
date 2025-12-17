@@ -4,6 +4,11 @@ import pool from "./db/db.js";
 import dotenv from "dotenv";
 import authRoutes from "./routes/auth.js";
 import { verifyToken } from "./verifyToken/middlewares.js";
+import usersRoutes from "./routes/users.js";
+import commentsRoutes from "./routes/comments.js";
+
+app.use("/", commentsRoutes);
+app.use("/users", usersRoutes);
 
 dotenv.config();
 
