@@ -3,7 +3,8 @@ import cors from "cors";
 import pool from "./db/db.js";
 import dotenv from "dotenv";
 import authRoutes from "./routes/auth.js";
-
+import swafferUi from 'swagger-ui-express';
+import swaggerSpec from './swaggerConfig.js';
 
 
 dotenv.config();
@@ -30,4 +31,4 @@ app.listen(PORT, ()=>{
     console.log(`server is runnig on http://localhost:${PORT}`)
 })
 
-
+app.use('/api-docs', swafferUi.serve, swafferUi.setup(swaggerSpec));
