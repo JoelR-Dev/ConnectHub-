@@ -2,9 +2,9 @@ import express from "express";
 import multer from "multer";
 import { verifyToken } from "../verifyToken/middlewares.js";
 import { create } from "../controllers/posts.js";
+import { getFeed } from "../controllers/feed.js";
 
 const router = express.Router();
-
 // configurar multer
 const storage = multer.diskStorage({
     destination: "uploads/",
@@ -16,5 +16,6 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 router.post("/create", verifyToken, upload.single("image"), create);
+router.get("/feed", verifyToken, getFeed);
 
 export default router;

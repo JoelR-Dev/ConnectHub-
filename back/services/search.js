@@ -1,4 +1,3 @@
-// back/services/auth.js
 import pool from "../db/db.js";
 
 export const getUserProfile = async (userId) => {
@@ -8,11 +7,13 @@ export const getUserProfile = async (userId) => {
       [userId]
     );
 
-    return rows[0] || null;
+    
+    return rows.length > 0 ? rows[0] : null;
+
   } catch (error) {
     console.error("Error en getUserProfile:", error);
-    throw error;
+    throw error; 
   }
 };
 
-export default getUserProfile;
+export default { getUserProfile };

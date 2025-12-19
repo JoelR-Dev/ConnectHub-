@@ -2,9 +2,10 @@ import express from "express";
 import cors from "cors";
 import pool from "./db/db.js";
 import dotenv from "dotenv";
-import authRoutes from "./routes/auth.js";
-import { verifyToken } from "./verifyToken/middlewares.js"; 
-import postsRoutes from "./routes/posts.js";
+import authRoutes from "./routes/search.js";
+import searchRoutes from "./routes/search.js";  
+import { verifyToken } from "./verifyToken/middlewares.js";
+import postRoutes from "./routes/posts.js";
 
 
 
@@ -43,7 +44,9 @@ app.get("/profile", verifyToken, async (req, res) => {
     }
 });
 
+// Rutas API
 app.use("/api", authRoutes);
+app.use("/posts", postRoutes);
 
 app.use("/posts", postsRoutes);
 
@@ -55,3 +58,4 @@ app.listen(PORT, () => {
 });
 
 export default app;
+
