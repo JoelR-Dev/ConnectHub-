@@ -24,6 +24,6 @@ export const create = async (req, res) => {
 
     } catch (err) {
         console.error(err);
-        res.status(500).json({ error: "Error al crear el post" });
+        res.status(500).json({ error: "Error al crear el post", details: err.message } );
     }
 };
