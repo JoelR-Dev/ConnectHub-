@@ -249,20 +249,20 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `posts`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE `posts` (
   `id` int NOT NULL AUTO_INCREMENT,
   `users_id` int DEFAULT NULL,
-  `posts_id` int DEFAULT NULL,
+  `company_id` int DEFAULT NULL,
   `content` text,
+  `image_url` varchar(255) DEFAULT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
-  `update_at` varchar(255) DEFAULT NULL,
+  `update_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `users_id` (`users_id`),
-  KEY `posts_id` (`posts_id`),
+  KEY `company_id` (`company_id`),
   CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`),
-  CONSTRAINT `posts_ibfk_2` FOREIGN KEY (`posts_id`) REFERENCES `company` (`id`)
+  CONSTRAINT `posts_ibfk_2` FOREIGN KEY (`company_id`) REFERENCES `company` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
